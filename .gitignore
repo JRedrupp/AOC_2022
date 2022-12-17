@@ -1,5 +1,3 @@
 
-/Day02/.idea/
-/Day02/venv/
-/Day01/.idea/
-/Day01/venv/
+**/.idea/
+**/venv/
