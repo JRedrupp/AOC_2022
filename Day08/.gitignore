@@ -3,3 +3,4 @@ venv/
 .idea/
 bin/
 lib/
+./pyenv.cfg
