@@ -136,7 +136,7 @@ def main():
         rope.move(instruction.direction, instruction.number_times)
     
     # Print the number of positions the tail has visited
-    print(rope.positions_tail_visited())
+    print(f"Number of positions the tail has visited: {rope.positions_tail_visited()}"")
 
 if __name__ == "__main__":
     main()
