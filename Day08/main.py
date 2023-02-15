@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 class Forest:
 
     def __init__(self, trees: list[list[int]]):
@@ -5,7 +7,7 @@ class Forest:
         self.visible = self.get_visible_array()
 
     @classmethod
-    def from_file(cls, path: str):
+    def from_file(cls, path: str) -> Forest:
         """
         Create Forest class from file
         File Example:
@@ -31,7 +33,20 @@ class Forest:
 
         tree_height = self.trees[y][x]
 
-        if self.check_top(x, y, tree_height) or self.check_bottom(x, y, tree_height) or self.check_left(x, y, tree_height) or self.check_right(x, y, tree_height):
+        return self.check_all_directions(x, y, tree_height)
+
+    def check_all_directions(self, x: int, y: int, tree_height: int) -> bool:
+        """
+        Check if any of the four sides of the tree
+        are visible from outside the forest.
+        """
+        if self.check_top(x, y, tree_height):
+            return True
+        if self.check_bottom(x, y, tree_height):
+            return True
+        if self.check_left(x, y, tree_height):
+            return True
+        if self.check_right(x, y, tree_height):
             return True
         return False
 
